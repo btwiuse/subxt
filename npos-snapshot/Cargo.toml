@@ -1,0 +1,27 @@
+[package]
+name = "npos-snapshot"
+authors.workspace = true
+edition.workspace = true
+version.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+documentation.workspace = true
+homepage.workspace = true
+
+[[bin]]
+path = "main.rs"
+name = "npos-snapshot"
+
+[dependencies]
+tokio = { workspace = true, features = ["macros", "time", "rt-multi-thread"] }
+futures = { workspace = true }
+subxt = { workspace = true }
+hex = { workspace = true }
+clap = { workspace = true, features = ["derive"] }
+
+[lints]
+workspace = true
+
+[features]
+default = ["subxt/unstable-light-client", "subxt/jsonrpsee", "subxt/native"]

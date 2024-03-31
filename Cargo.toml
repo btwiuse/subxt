@@ -13,7 +13,7 @@ members = [
     "metadata",
     "signer",
     "subxt",
-    "scripts/artifacts",
+    "scripts/artifacts", "npos-snapshot",
 ]
 
 # We exclude any crates that would depend on non mutually
