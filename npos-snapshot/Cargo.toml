@@ -1,8 +1,9 @@
 [package]
-name = "npos-snapshot"
+name = "kek"
+description = "get storage value using subxt"
 authors.workspace = true
 edition.workspace = true
-version.workspace = true
+version = "0.0.0"
 rust-version.workspace = true
 license.workspace = true
 repository.workspace = true

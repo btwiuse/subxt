@@ -3,22 +3,16 @@ use clap::Parser;
 use futures::StreamExt;
 use subxt::{client::OnlineClient, lightclient::LightClient, PolkadotConfig};
 
-const POLKADOT_SPEC: &str = include_str!("../artifacts/demo_chain_specs/polkadot.json");
-
 #[derive(clap::Parser)]
 pub struct Config {
     /// path to chain spec
     #[clap(short, long)]
     pub chain: String,
     /// storage key
-    #[clap(
-        short,
-        long,
-        default_value = "0xede8e4fdc3c8b556f0ce2f77fc2575e396d38fd45bc038faa9586fa93aa03ef7"
-    )]
+    #[clap(short, long)]
     pub key: String,
     /// output file
-    #[clap(short, long, default_value = "snapshot.hex")]
+    #[clap(short, long)]
     pub output: String,
 }
 
