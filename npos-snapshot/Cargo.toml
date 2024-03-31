@@ -1,28 +1,21 @@
 [package]
-name = "kek"
+authors = ["btwiuse"]
 description = "get storage value using subxt"
-authors.workspace = true
-edition.workspace = true
-version = "0.0.0"
-rust-version.workspace = true
-license.workspace = true
-repository.workspace = true
-documentation.workspace = true
-homepage.workspace = true
+edition = "2021"
+license = "MIT"
+name = "kek"
+version = "0.0.1"
 
 [[bin]]
 path = "main.rs"
-name = "npos-snapshot"
+name = "kek"
 
 [dependencies]
-tokio = { workspace = true, features = ["macros", "time", "rt-multi-thread"] }
-futures = { workspace = true }
-subxt = { workspace = true }
-hex = { workspace = true }
-clap = { workspace = true, features = ["derive"] }
-
-[lints]
-workspace = true
+clap = { version = "4.5.3", features = ["derive", "cargo"] }
+futures = { version = "0.3.30", default-features = false, features = ["std"] }
+hex = { version = "0.4.3", default-features = false }
+subxt = { version = "0.35.0", default-features = false }
+tokio = { version = "1.36", default-features = false, features = ["macros", "time", "rt-multi-thread"] }
 
 [features]
 default = ["subxt/unstable-light-client", "subxt/jsonrpsee", "subxt/native"]
