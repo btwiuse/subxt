@@ -4,7 +4,7 @@ description = "get storage value using subxt"
 edition = "2021"
 license = "MIT"
 name = "kek"
-version = "0.0.1"
+version = "0.0.2"
 
 [[bin]]
 path = "main.rs"
