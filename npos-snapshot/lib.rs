@@ -19,6 +19,8 @@ impl Chain {
             x if x == "vara" => Chain::Secure("wss://archive-rpc.vara.network".to_string()),
             x if x == "joystream" => Chain::Secure("wss://rpc.joystream.org".to_string()),
             x if x == "enjin" => Chain::Secure("wss://rpc.relay.blockchain.enjin.io".to_string()),
+            x if x == "canary" => Chain::Secure("wss://rpc.relay.canary.enjin.io".to_string()),
+            x if x == "paseo" => Chain::Secure("wss://rpc.ibp.network/paseo".to_string()),
 
             url if url.starts_with("wss://") || url.starts_with("https://") => {
                 Chain::Secure(url.to_string())
