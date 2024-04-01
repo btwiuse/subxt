@@ -7,14 +7,16 @@ pub enum Chain {
 }
 
 pub const POLKADOT_SPEC: &str = include_str!("polkadot.json");
+pub const KUSAMA_SPEC: &str = include_str!("kusama.json");
+pub const WESTEND_SPEC: &str = include_str!("westend.json");
 
 impl Chain {
     pub fn parse(chain: &str) -> Self {
         match chain {
             x if x == "polkadot" => Chain::Light(POLKADOT_SPEC.to_string()),
-            x if x == "kusama" => Chain::Secure("wss://kusama-rpc.polkadot.io".to_string()),
+            x if x == "kusama" => Chain::Light(KUSAMA_SPEC.to_string()),
+            x if x == "westend" => Chain::Light(WESTEND_SPEC.to_string()),
             x if x == "vara" => Chain::Secure("wss://archive-rpc.vara.network".to_string()),
-            x if x == "westend" => Chain::Secure("wss://westend-rpc.polkadot.io".to_string()),
             x if x == "joystream" => Chain::Secure("wss://rpc.joystream.org".to_string()),
             x if x == "enjin" => Chain::Secure("wss://rpc.relay.blockchain.enjin.io".to_string()),
 
